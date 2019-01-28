@@ -1,1 +1,5 @@
 myweb/__pycache__/
+blog/__pycache__/
+blog/migrations/__pycache__/
+product/__pycache__/
+product/migrations/__pycache__/

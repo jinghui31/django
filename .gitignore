@@ -3,3 +3,4 @@ blog/__pycache__/
 blog/migrations/__pycache__/
 product/__pycache__/
 product/migrations/__pycache__/
+video/__pycache__/

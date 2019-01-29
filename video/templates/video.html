@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset = 'utf-8'>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class = 'navbar navbar-default'>
+        <div class = 'container-fluid'>
+            <div class = 'navbar-header'>
+                <div class = 'navbar-brand' align = 'center'>
+                    <img src = '{% static "images/logo.png" %}' width = 60>
+                    {{ tv.name }}
+                </div>
+            </div>
+            <ul class = 'nav navbar-nav'>
+                <li class = 'active'><a href = '/'>Home</a></li>
+                <li><a href = '{% url "tv-url" 0 %}'>明天再擱來</a></li>
+                <li><a href = '{% url "tv-url" 1 %}'>愛我你會死</a></li>
+                <li><a href = '{% url "tv-url" 2 %}'>浪流連</a></li>
+                <li><a href = '{% url "tv-url" 3 %}'>我跟你卡好</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class = 'container'>
+        <div id = 'tvcode' align = 'center'>
+            <iframe width = '560' height = '315' src = 'https://www.youtube.com/embed/{{ tv.tvcode }}?autoplay=1' frameborder = '0' allowfullscreen></iframe>
+        </div>
+    </div>
+<div class = 'panel panel-default'>
+    <div class = 'panel-footer'><em>{{ now }}</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+</html>
